@@ -29,4 +29,11 @@ public class LandLot {
     public long getRecommendedPrice() {
         return recommendedPrice;
     }
+
+    @Override
+    public String toString() {
+        return "LandLot{" +
+                "id=" + id +
+                '}';
+    }
 }

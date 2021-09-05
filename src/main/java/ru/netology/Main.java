@@ -18,10 +18,8 @@ public class Main {
         int input = Integer.parseInt(scanner.nextLine());
 
         Arrays.stream(lots)
-                .map(o -> new long[]
-                        {(long) input * o.getWidth() * o.getLength(),
-                                o.getRecommendedPrice(), o.getId()})
-                .forEach(o -> System.out.printf("Сделка № %s : %s\n", o[2], o[0] >= o[1] ? "честная" : "не честная"));
-
+                .map(o -> o + ((long) input * o.getLength() * o.getWidth() >= o.getRecommendedPrice()
+                        ? " честная" : " нечестная"))
+                .forEach(System.out::println);
     }
 }
